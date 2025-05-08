@@ -12,16 +12,18 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Step 1: Create an array of doubles with the specified length.
         double[] multiples = new double [length];
 
 
-// 
-
+        // Step 2: Use a for loop to iterate from 0 to length - 1.
         for (int i = 0; i < length; i++)
         {
+            // Step 3: Calculate the multiple of 'number' for the current index (i).
+            // The first multiple corresponds to i = 0, so we multiply by (i + 1).
             multiples[i] = number * (i+1);
         }
-
+            // Step 4: Return the array of multiples.
         return multiples; // replace this return statement with your own
     }
 
@@ -38,12 +40,21 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        // Step 1: Calculate the effective amount to rotate using modulo to handle cases where amount > data.Count.
         int effectiveAmount = amount % data.Count;
+
+        // Step 2: Create a new list to hold the rotated values.
         List<int> rotatelist = new List<int>();
 
+        // Step 3: Get the last 'effectiveAmount' elements from the original list and add them to the new list.
         rotatelist.AddRange(data.GetRange(data.Count - effectiveAmount, effectiveAmount));
+        // Step 4: Get the remaining elements from the original list (from the start to the end - effectiveAmount) and add them to the new list.
         rotatelist.AddRange(data.GetRange(0, data.Count - effectiveAmount));
+        // Step 5: Clear the original list and add the rotated elements back to it.
+
         data.Clear();
+        
         data.AddRange(rotatelist);
+        
     }
 }
