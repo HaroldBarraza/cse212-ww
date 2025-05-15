@@ -6,9 +6,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class PriorityQueueTests
 {
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: Basic enqueue and dequeue operations with different priorities
+    // Expected Result: Elements should be dequeued in correct priority order (highest first)
+    // Defect(s) Found:
+    // - Not returning 'high' first as it should
+    // - Items coming out in wrong order
+    // - Priority system not working right
     public void TestPriorityQueue_1()
     {
         var priorityQueue = new PriorityQueue();
@@ -22,9 +25,12 @@ public class PriorityQueueTests
     }
 
     [TestMethod]
-    // Scenario: 
-    // Expected Result: 
-    // Defect(s) Found: 
+    // Scenario: Multiple elements with same priority
+    // Expected Result: Elements with same priority should maintain FIFO order
+    // Defect(s) Found:
+    // - Not returning items in first-in-first-out order
+    // - Order gets mixed up for same-priority items
+    // - Queue not remembering addition order correctly
     public void TestPriorityQueue_2()
     {
         var priorityQueue = new PriorityQueue();
