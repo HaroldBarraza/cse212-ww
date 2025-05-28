@@ -29,12 +29,10 @@ public static class SetsAndMaps
 
         foreach (var word in words)
         {
-        // Skip if we've already processed this word or its reverse
         if (addedPairs.Contains(word)) continue;
 
         var reversed = new string(word.Reverse().ToArray());
         
-        // Check if the reversed word exists and it's not the same as original
         if (word != reversed && wordset.Contains(reversed))
         {
             result.Add($"{word} & {reversed}");
